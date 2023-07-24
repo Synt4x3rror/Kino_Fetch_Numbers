@@ -1,5 +1,5 @@
 kino_service:
   url: https://wordpresswebapi-hotfixcore6migration.azurewebsites.net/api/ElectronicDrawing/LastElectronicDrawingByDrawingNumber
   number_game: 13 # 13 represent Kino, the game to query the results API. Other values return results for other games.
-  drawings_per_request: 20
+  drawings_per_request: 5
   last_query_date: 0
