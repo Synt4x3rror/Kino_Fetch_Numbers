@@ -3,3 +3,13 @@ kino_service:
   number_game: 13 # 13 represent Kino, the game to query the results API. Other values return results for other games.
   drawings_per_request: 5
   last_query_date: 0
+
+sqlite_config:
+  path: /media/Storage/Documents/Projects/KinoFetchNumbers/kino.db
+  table_name: kino_drawings
+  fields:
+    - E_DRAWING_ID
+    - DRAWING_NO
+    - DRAWING_RESULT
+    - DRAWING_DATETIME
+    - DRAWING_RESULT_FORMATTED
