@@ -19,13 +19,15 @@ class KinoHelper:
             print(repr(e))
             sys.exit('FETCH')
 
-    def query_kino_results(self):
+    def query_kino_results(self, sqlite_helper_instance):
         # Query the latest records in the Loteria Electronica de Puerto Rico
         res = self.__query_latest_records()
 
         # Check last result on the sqlite database
+        last_id = sqlite_helper_instance.query_latest_result_id()
 
         # Remove the results from results obtained, if necessary
+        res = [x for x in res if x['electronicDrawingID'] > last_id]
 
         return res
 
