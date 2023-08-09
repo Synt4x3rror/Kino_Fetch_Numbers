@@ -21,6 +21,21 @@ class DBHelper:
             print(repr(e))
             sys.exit('QUERY DATABASE')
 
+    def query_latest_result_date(self):
+        try:
+            conn = sqlite3.connect(self.path_to_db)
+            cursor = conn.cursor()
+            res = cursor.execute(f"SELECT {self.config['sqlite_config']['fields'][3]} "
+            f"FROM {self.config['sqlite_config']['table_name']} "
+            f"ORDER BY {self.config['sqlite_config']['fields'][3]} DESC LIMIT 1").fetchone()
+
+            conn.close()
+            return res[0]
+        except Exception as e:
+            print('An error has occurred while querying records in the SQLite Database')
+            print(repr(e))
+            sys.exit('QUERY DATABASE')
+
     def insert_records(self, lst_records):
         import datetime
         from helpers.KinoHelper import KinoHelper
