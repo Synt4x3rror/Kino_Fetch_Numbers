@@ -1,7 +1,7 @@
 kino_service:
   url: https://wordpresswebapi-hotfixcore6migration.azurewebsites.net/api/ElectronicDrawing/LastElectronicDrawingByDrawingNumber
   number_game: 13 # 13 represent Kino, the game to query the results API. Other values return results for other games.
-  drawings_per_request: 366
+  minutes_per_drawing: 4 # Represents how many minutes elapses between drawings
 
 sqlite_config:
   path: /media/Storage/Documents/Projects/KinoFetchNumbers/kino.db
